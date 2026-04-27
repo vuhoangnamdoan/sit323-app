@@ -1,16 +1,16 @@
 steps:
   - name: gcr.io/cloud-builders/docker
-    args: ['build', '-t', 'DOCKERHUB_USERNAME/cloud-task-backend:latest', './backend']
+    args: ['build', '-t', 'vuhoangnamdoan/cloud-task-backend:latest', './backend']
 
   - name: gcr.io/cloud-builders/docker
-    args: ['build', '-t', 'DOCKERHUB_USERNAME/cloud-task-frontend:latest', './frontend']
+    args: ['build', '-t', 'vuhoangnamdoan/cloud-task-frontend:latest', './frontend']
 
   - name: gcr.io/cloud-builders/docker
-    args: ['push', 'DOCKERHUB_USERNAME/cloud-task-backend:latest']
+    args: ['push', 'vuhoangnamdoan/cloud-task-backend:latest']
 
   - name: gcr.io/cloud-builders/docker
-    args: ['push', 'DOCKERHUB_USERNAME/cloud-task-frontend:latest']
+    args: ['push', 'vuhoangnamdoan/cloud-task-frontend:latest']
 
 images:
-  - 'DOCKERHUB_USERNAME/cloud-task-backend:latest'
-  - 'DOCKERHUB_USERNAME/cloud-task-frontend:latest'
+  - 'vuhoangnamdoan/cloud-task-backend:latest'
+  - 'vuhoangnamdoan/cloud-task-frontend:latest'
