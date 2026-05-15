@@ -19,13 +19,13 @@ spec:
             - containerPort: 5000
           readinessProbe:
             httpGet:
-              path: /
+              path: /health
               port: 5000
             initialDelaySeconds: 20
-            periodSeconds: 5
+            periodSeconds: 10
           livenessProbe:
             httpGet:
-              path: /
+              path: /health
               port: 5000
             initialDelaySeconds: 45
-            periodSeconds: 20
+            periodSeconds: 15
