@@ -17,3 +17,15 @@ spec:
           image: vuhoangnamdoan/cloud-task-backend:latest
           ports:
             - containerPort: 5000
+      readinessProbe:
+        httpGet:
+          path: /
+          port: 5000
+        initialDelaySeconds: 5
+        periodSeconds: 5
+      livenessProbe:
+        httpGet:
+          path: /
+          port: 5000
+        initialDelaySeconds: 15
+        periodSeconds: 20
